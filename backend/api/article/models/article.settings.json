@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "article",
+  "info": {
+    "name": "Article"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "Content": {
+      "type": "richtext"
+    },
+    "CreateDate": {
+      "type": "datetime"
+    },
+    "Subtitle": {
+      "type": "string"
+    },
+    "articles": {
+      "collection": "article"
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_test_component_category_test_components",
+  "info": {
+    "name": "Test Component",
+    "icon": "allergies"
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "Subtitle": {
+      "type": "string"
+    },
+    "Body": {
+      "type": "richtext"
+    }
+  }
+}
