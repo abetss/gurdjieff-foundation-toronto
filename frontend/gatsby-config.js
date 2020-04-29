@@ -90,5 +90,21 @@ module.exports = {
     },
     // "gatsby-plugin-offline",
     "gatsby-plugin-theme-ui",
+    `gatsby-plugin-mdx`,
+    {
+      resolve: `gatsby-plugin-prefetch-google-fonts`,
+      options: {
+        fonts: [
+          {
+            family: `Aclonica`,
+            variants: [`400`, `700`],
+          },
+          {
+            family: `Merienda`,
+            variants: [`400`, `700`],
+          },
+        ],
+      },
+    },
   ],
 }

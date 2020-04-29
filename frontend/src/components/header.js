@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx, Flex, NavLink } from "theme-ui"
+import { jsx, Flex, NavLink, Heading } from "theme-ui"
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
 
@@ -10,7 +10,7 @@ const Header = ({ title, subTitle }) => (
       mb: 2,
     }}
   >
-    <div sx={{ py: 2, variant: "padding.content" }}>
+    <div sx={{ py: 2, variant: "container.margin" }}>
       <Link
         to="/"
         sx={{
@@ -22,8 +22,11 @@ const Header = ({ title, subTitle }) => (
           letterSpacing: "0.1em",
         }}
       >
-        <h1 sx={{ margin: 0, fontSize: 5, whiteSpace: "nowrap" }}>{title}</h1>
-        <h1
+        <Heading as="h1" sx={{ margin: 0, fontSize: 5, whiteSpace: "nowrap" }}>
+          {title}
+        </Heading>
+        <Heading
+          as="h1"
           sx={{
             margin: 0,
             fontSize: 4,
@@ -33,13 +36,31 @@ const Header = ({ title, subTitle }) => (
           }}
         >
           {subTitle}
-        </h1>
+        </Heading>
       </Link>
-      <Flex as="nav">
-        <NavLink href="#!">Home</NavLink>
-        <NavLink href="#!">About</NavLink>
-        <NavLink href="#!">Articles</NavLink>
-        <NavLink href="#!">Contact us</NavLink>
+      <Flex
+        as="nav"
+        sx={{ mt: [2, 0, 0], justifyContent: "space-between", flexDirection: ["column", "column", "row"] }}
+      >
+        <Flex sx={{ flexDirection: ["column", "row", "row"] }}>
+          <Link sx={{ variant: "links.nav" }} to="/">
+            Home
+          </Link>
+          <Link sx={{ variant: "links.nav" }} to="/about/">
+            About
+          </Link>
+          <Link sx={{ variant: "links.nav" }} to="/articles">
+            Articles
+          </Link>
+          <Link sx={{ variant: "links.nav" }} to="/contact-us">
+            Contact us
+          </Link>
+        </Flex>
+        <Flex>
+          <NavLink target="_blank" sx={{ fontStyle: "italic" }} href="https://traditionalstudiespress.com/">
+            Traditional Studies Press
+          </NavLink>
+        </Flex>
       </Flex>
     </div>
   </header>

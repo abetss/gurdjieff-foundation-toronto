@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "gatsby-plugin-prefetch-google-fonts": "^1.4.3"
+  }
+}
