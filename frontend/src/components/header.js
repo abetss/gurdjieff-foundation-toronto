@@ -1,32 +1,46 @@
+/** @jsx jsx */
+import { jsx, Flex, NavLink } from "theme-ui"
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
-import React from "react"
 
-const Header = ({ siteTitle }) => (
+const Header = ({ title, subTitle }) => (
   <header
-    style={{
-      background: `rebeccapurple`,
-      marginBottom: `1.45rem`,
+    sx={{
+      bg: `primary`,
+      mb: 2,
     }}
   >
-    <div
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
-      }}
-    >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
+    <div sx={{ py: 2, variant: "padding.content" }}>
+      <Link
+        to="/"
+        sx={{
+          color: `background`,
+          textDecoration: `none`,
+          display: "flex",
+          alignItems: ["flex-start", "center", "center"],
+          flexDirection: ["column", "row", "row"],
+          letterSpacing: "0.1em",
+        }}
+      >
+        <h1 sx={{ margin: 0, fontSize: 5, whiteSpace: "nowrap" }}>{title}</h1>
+        <h1
+          sx={{
+            margin: 0,
+            fontSize: 4,
+            whiteSpace: "nowrap",
+            ml: [0, 1, 1],
+            "::before": { content: ['""', '" - "', '" - "'] },
           }}
         >
-          {siteTitle}
-        </Link>
-      </h1>
+          {subTitle}
+        </h1>
+      </Link>
+      <Flex as="nav">
+        <NavLink href="#!">Home</NavLink>
+        <NavLink href="#!">About</NavLink>
+        <NavLink href="#!">Articles</NavLink>
+        <NavLink href="#!">Contact us</NavLink>
+      </Flex>
     </div>
   </header>
 )

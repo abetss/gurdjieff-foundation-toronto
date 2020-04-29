@@ -9,14 +9,22 @@
     "timestamps": true
   },
   "attributes": {
-    "Title": {
+    "quote": {
       "type": "string"
     },
-    "Subtitle": {
-      "type": "string"
-    },
-    "body": {
+    "content": {
       "type": "richtext"
+    },
+    "contentImage": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "files",
+        "images",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
     }
   }
 }

@@ -1,11 +1,6 @@
-/**
- * Layout component that queries for data
- * with Gatsby's useStaticQuery component
- *
- * See: https://www.gatsbyjs.org/docs/use-static-query/
- */
-
-import React from "react"
+/** @jsx jsx */
+import { jsx } from "theme-ui"
+import { Fragment } from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 
@@ -18,27 +13,24 @@ const Layout = ({ children }) => {
       site {
         siteMetadata {
           title
+          subTitle
         }
       }
     }
   `)
 
   return (
-    <>
-      <Header siteTitle={data.site.siteMetadata.title} />
-      <div
-        style={{
-          margin: `0 auto`,
-          maxWidth: 960,
-          padding: `0 1.0875rem 1.45rem`,
-        }}
-      >
-        <main>{children}</main>
-        <footer>
+    <Fragment>
+      <div sx={{ display: "flex", flexDirection: "column" }}>
+        <div>
+          <Header title={data.site.siteMetadata.title} subTitle={data.site.siteMetadata.subTitle} />
+          <main>{children}</main>
+        </div>
+        <footer sx={{ mt: 5, variant: "padding.content", display: "flex", justifyContent: "center", color: "grey" }}>
           <span>© {new Date().getFullYear()}, Gurdjieff Traditional Studies</span>
         </footer>
       </div>
-    </>
+    </Fragment>
   )
 }
 
