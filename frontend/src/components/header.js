@@ -19,10 +19,11 @@ const Header = ({ title, subTitle }) => (
           display: "flex",
           alignItems: ["flex-start", "center", "center"],
           flexDirection: ["column", "row", "row"],
+          flexWrap: 'wrap',
           letterSpacing: "0.1em",
         }}
       >
-        <Heading as="h1" sx={{ margin: 0, fontSize: 5, whiteSpace: "nowrap" }}>
+        <Heading as="h1" sx={{ margin: 0, fontSize: 5, whiteSpace: "nowrap", fontFamily: 'logo' }}>
           {title}
         </Heading>
         <Heading
@@ -30,6 +31,7 @@ const Header = ({ title, subTitle }) => (
           sx={{
             margin: 0,
             fontSize: 4,
+            fontFamily: 'logo',
             whiteSpace: "nowrap",
             ml: [0, 1, 1],
             "::before": { content: ['""', '" - "', '" - "'] },
@@ -40,7 +42,7 @@ const Header = ({ title, subTitle }) => (
       </Link>
       <Flex
         as="nav"
-        sx={{ mt: [2, 0, 0], justifyContent: "space-between", flexDirection: ["column", "column", "row"] }}
+        sx={{ mt: [2, 0, 0], justifyContent: "space-between", flexDirection: "row", flexWrap: 'wrap' }}
       >
         <Flex sx={{ flexDirection: ["column", "row", "row"] }}>
           <Link sx={{ variant: "links.nav" }} to="/">

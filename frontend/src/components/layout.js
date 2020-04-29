@@ -7,6 +7,7 @@ import { Global, css } from "@emotion/core"
 import styles from "../gatsby-plugin-theme-ui/styles"
 
 import Header from "./header"
+import "./layout.css"
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`

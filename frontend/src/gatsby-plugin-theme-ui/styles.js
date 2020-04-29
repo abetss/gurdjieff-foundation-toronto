@@ -1,5 +1,5 @@
 const heading = {
-  color: "text",
+  color: "heading",
   fontFamily: "heading",
   lineHeight: "heading",
   fontWeight: "heading",
@@ -10,6 +10,7 @@ export default {
     fontFamily: "body",
     lineHeight: "body",
     fontWeight: "body",
+    fontSize: [2, 3],
     margin: 0,
     "-webkit-font-smoothing": "antialiased",
     "-moz-osx-font-smoothing": "grayscale",
@@ -18,12 +19,10 @@ export default {
   },
   h1: {
     ...heading,
-    color: 'red',
     fontSize: [5, 6],
   },
   h2: {
     ...heading,
-    color: 'green',
     fontSize: [4, 5],
   },
   h3: {
@@ -36,7 +35,7 @@ export default {
   },
   h5: {
     ...heading,
-    fontSize: [1],
+    fontSize: 1,
   },
   h6: {
     ...heading,
