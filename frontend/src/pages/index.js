@@ -54,7 +54,7 @@ const IndexPage = ({
 export default IndexPage
 
 export const query = graphql`
-  query MyQuery {
+  query HomePageQuery {
     strapiHomePage {
       quote
       childStrapiHomePageContent {

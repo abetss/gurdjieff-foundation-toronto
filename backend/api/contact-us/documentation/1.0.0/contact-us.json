@@ -1,12 +1,12 @@
 {
   "paths": {
-    "/text-page": {
+    "/contact-us": {
       "get": {
         "deprecated": false,
-        "description": "Find all the text-page's records",
+        "description": "Find all the contact-us's records",
         "responses": {
           "200": {
-            "description": "Retrieve text-page document(s)",
+            "description": "Retrieve contact-us document(s)",
             "content": {
               "application/json": {
                 "schema": {
@@ -52,7 +52,7 @@
         },
         "summary": "",
         "tags": [
-          "Text-page"
+          "Contact-us"
         ],
         "parameters": [
           {
@@ -195,10 +195,10 @@
       },
       "put": {
         "deprecated": false,
-        "description": "Update a single text-page record",
+        "description": "Update a single contact-us record",
         "responses": {
           "200": {
-            "description": "Retrieve text-page document(s)",
+            "description": "Retrieve contact-us document(s)",
             "content": {
               "application/json": {
                 "schema": {
@@ -244,7 +244,7 @@
         },
         "summary": "",
         "tags": [
-          "Text-page"
+          "Contact-us"
         ],
         "requestBody": {
           "description": "",
@@ -252,7 +252,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewText-page"
+                "$ref": "#/components/schemas/NewContact-us"
               }
             }
           }
@@ -261,10 +261,10 @@
       },
       "delete": {
         "deprecated": false,
-        "description": "Delete a single text-page record",
+        "description": "Delete a single contact-us record",
         "responses": {
           "200": {
-            "description": "deletes a single text-page based on the ID supplied",
+            "description": "deletes a single contact-us based on the ID supplied",
             "content": {
               "application/json": {
                 "schema": {
@@ -307,7 +307,7 @@
         },
         "summary": "",
         "tags": [
-          "Text-page"
+          "Contact-us"
         ],
         "parameters": []
       }
@@ -315,7 +315,7 @@
   },
   "components": {
     "schemas": {
-      "Text-page": {
+      "Contact-us": {
         "required": [
           "id"
         ],
@@ -323,27 +323,91 @@
           "id": {
             "type": "string"
           },
-          "Title": {
+          "title": {
             "type": "string"
           },
-          "Subtitle": {
+          "content": {
             "type": "string"
           },
-          "Content": {
-            "type": "string"
+          "contacts": {
+            "type": "array",
+            "items": {
+              "oneOf": [
+                {
+                  "properties": {
+                    "__component": {
+                      "type": "string",
+                      "enum": [
+                        "contact-info.contact"
+                      ]
+                    },
+                    "id": {
+                      "type": "string"
+                    },
+                    "DisplayName": {
+                      "type": "string"
+                    },
+                    "Description": {
+                      "type": "string"
+                    },
+                    "Email": {
+                      "type": "string"
+                    },
+                    "PhoneNumber": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "id"
+                  ]
+                }
+              ]
+            }
           }
         }
       },
-      "NewText-page": {
+      "NewContact-us": {
         "properties": {
-          "Title": {
+          "title": {
             "type": "string"
           },
-          "Subtitle": {
+          "content": {
             "type": "string"
           },
-          "Content": {
-            "type": "string"
+          "contacts": {
+            "type": "array",
+            "items": {
+              "oneOf": [
+                {
+                  "properties": {
+                    "__component": {
+                      "type": "string",
+                      "enum": [
+                        "contact-info.contact"
+                      ]
+                    },
+                    "id": {
+                      "type": "string"
+                    },
+                    "DisplayName": {
+                      "type": "string"
+                    },
+                    "Description": {
+                      "type": "string"
+                    },
+                    "Email": {
+                      "type": "string"
+                    },
+                    "PhoneNumber": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "id"
+                  ]
+                }
+              ]
+            }
           }
         }
       }

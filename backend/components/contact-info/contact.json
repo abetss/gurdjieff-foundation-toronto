@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_contact_info_contacts",
+  "info": {
+    "name": "Contact",
+    "icon": "envelope"
+  },
+  "options": {},
+  "attributes": {
+    "DisplayName": {
+      "type": "string"
+    },
+    "Description": {
+      "type": "text"
+    },
+    "Email": {
+      "type": "email"
+    },
+    "PhoneNumber": {
+      "type": "string"
+    }
+  }
+}

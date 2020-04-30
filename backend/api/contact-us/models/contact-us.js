@@ -1,7 +1,7 @@
 'use strict';
 
 /**
- * Lifecycle callbacks for the `text-page` model.
+ * Lifecycle callbacks for the `contact-us` model.
  */
 
 module.exports = {
