@@ -1,6 +1,6 @@
 /** @jsx jsx */
-import { jsx, Heading, Grid, Text, Divider, Link as ThLink, Card, Flex } from "theme-ui"
-import { Link } from "gatsby"
+import { jsx, Heading, Grid, Text, Link as ThLink, Flex } from "theme-ui"
+import { graphql } from "gatsby"
 import { MdEmail, MdPhone } from "react-icons/md"
 
 import Layout from "../components/layout"

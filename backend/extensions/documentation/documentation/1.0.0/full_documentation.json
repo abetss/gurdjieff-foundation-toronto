@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "04/29/2020 8:28:06 PM"
+    "x-generation-date": "05/01/2020 6:30:35 PM"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -3349,13 +3349,10 @@
           "Title": {
             "type": "string"
           },
-          "Content": {
-            "type": "string"
-          },
           "CreateDate": {
             "type": "datetime"
           },
-          "Subtitle": {
+          "Author": {
             "type": "string"
           },
           "articles": {
@@ -3369,19 +3366,34 @@
               "Title": {
                 "type": "string"
               },
-              "Content": {
-                "type": "string"
-              },
               "CreateDate": {
                 "type": "datetime"
               },
-              "Subtitle": {
+              "Author": {
                 "type": "string"
               },
               "articles": {
                 "type": "string"
+              },
+              "Footer": {
+                "type": "string"
+              },
+              "Content": {
+                "type": "string"
+              },
+              "Summary": {
+                "type": "string"
               }
             }
+          },
+          "Footer": {
+            "type": "string"
+          },
+          "Content": {
+            "type": "string"
+          },
+          "Summary": {
+            "type": "string"
           }
         }
       },
@@ -3390,16 +3402,22 @@
           "Title": {
             "type": "string"
           },
-          "Content": {
-            "type": "string"
-          },
           "CreateDate": {
             "type": "datetime"
           },
-          "Subtitle": {
+          "Author": {
             "type": "string"
           },
           "articles": {
+            "type": "string"
+          },
+          "Footer": {
+            "type": "string"
+          },
+          "Content": {
+            "type": "string"
+          },
+          "Summary": {
             "type": "string"
           }
         }

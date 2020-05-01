@@ -525,13 +525,10 @@
           "Title": {
             "type": "string"
           },
-          "Content": {
-            "type": "string"
-          },
           "CreateDate": {
             "type": "datetime"
           },
-          "Subtitle": {
+          "Author": {
             "type": "string"
           },
           "articles": {
@@ -545,19 +542,34 @@
               "Title": {
                 "type": "string"
               },
-              "Content": {
-                "type": "string"
-              },
               "CreateDate": {
                 "type": "datetime"
               },
-              "Subtitle": {
+              "Author": {
                 "type": "string"
               },
               "articles": {
                 "type": "string"
+              },
+              "Footer": {
+                "type": "string"
+              },
+              "Content": {
+                "type": "string"
+              },
+              "Summary": {
+                "type": "string"
               }
             }
+          },
+          "Footer": {
+            "type": "string"
+          },
+          "Content": {
+            "type": "string"
+          },
+          "Summary": {
+            "type": "string"
           }
         }
       },
@@ -566,16 +578,22 @@
           "Title": {
             "type": "string"
           },
-          "Content": {
-            "type": "string"
-          },
           "CreateDate": {
             "type": "datetime"
           },
-          "Subtitle": {
+          "Author": {
             "type": "string"
           },
           "articles": {
+            "type": "string"
+          },
+          "Footer": {
+            "type": "string"
+          },
+          "Content": {
+            "type": "string"
+          },
+          "Summary": {
             "type": "string"
           }
         }

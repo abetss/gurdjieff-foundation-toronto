@@ -32,7 +32,9 @@ export default {
   colors: {
     text: "#000",
     background: "#fff",
-    primary: "#07c",
+    // primary: "#07c",
+    primary: "#006ab6",
+    // primary: "rgb(34, 117, 148)",
     secondary: "#30c",
     accent: "#ffbd43",
     muted: "#f6f6f6",

@@ -12,17 +12,23 @@
     "Title": {
       "type": "string"
     },
-    "Content": {
-      "type": "richtext"
-    },
     "CreateDate": {
       "type": "datetime"
     },
-    "Subtitle": {
+    "Author": {
       "type": "string"
     },
     "articles": {
       "collection": "article"
+    },
+    "Footer": {
+      "type": "richtext"
+    },
+    "Content": {
+      "type": "richtext"
+    },
+    "Summary": {
+      "type": "richtext"
     }
   }
 }

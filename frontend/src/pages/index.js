@@ -1,20 +1,18 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui"
-import { Link } from "gatsby"
-import ReactMarkdown from "react-markdown"
+import { graphql } from "gatsby"
 import { Flex, Text } from "theme-ui"
 import Img from "gatsby-image"
 import { MDXProvider } from "@mdx-js/react"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 
 import Layout from "../components/layout"
-import Image from "../components/image"
 import SEO from "../components/seo"
 
 const IndexPage = ({
   data: {
-    strapiHomePage: { quote, childStrapiHomePageContent, contentImage }
-  }
+    strapiHomePage: { quote, childStrapiHomePagecontent, contentImage },
+  },
 }) => (
   <Layout>
     <SEO title="Gurdjieff foundation Toronto" />
@@ -24,13 +22,13 @@ const IndexPage = ({
           variant: "container.margin",
           justifyContent: "center",
           alignItems: ["start", "center", "center"],
-          py: [3, 4, 5]
+          py: [3, 4, 5],
         }}
       >
         <Text
           sx={{
             fontSize: 6,
-            fontFamily: "quote"
+            fontFamily: "quote",
           }}
           as="blockquote"
         >
@@ -44,9 +42,11 @@ const IndexPage = ({
         sx={{ float: "left ", mr: [4, 4, 5], mb: [3, 3, 4], width: 350 }}
         fluid={contentImage.childImageSharp.fluid}
       />
-      <MDXProvider>
-        <MDXRenderer>{childStrapiHomePageContent.childMdx.body}</MDXRenderer>
-      </MDXProvider>
+      <div>
+        <MDXProvider>
+          <MDXRenderer>{childStrapiHomePagecontent.childMdx.body}</MDXRenderer>
+        </MDXProvider>
+      </div>
     </div>
   </Layout>
 )
@@ -57,7 +57,7 @@ export const query = graphql`
   query HomePageQuery {
     strapiHomePage {
       quote
-      childStrapiHomePageContent {
+      childStrapiHomePagecontent {
         childMdx {
           body
         }

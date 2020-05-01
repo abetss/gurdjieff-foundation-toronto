@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_content_cenetered_contents",
+  "info": {
+    "name": "CeneteredContent",
+    "icon": "align-center"
+  },
+  "options": {},
+  "attributes": {
+    "CenteredContent": {
+      "type": "richtext"
+    }
+  }
+}

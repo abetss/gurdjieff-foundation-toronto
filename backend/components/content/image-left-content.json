@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_content_image_left_contents",
+  "info": {
+    "name": "ImageLeftContent",
+    "icon": "arrow-left"
+  },
+  "options": {},
+  "attributes": {
+    "ImageLeftContent": {
+      "type": "richtext"
+    }
+  }
+}
