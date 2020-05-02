@@ -1,4 +1,5 @@
-'use strict';
+"use strict"
+const slugify = require("slugify")
 
 /**
  * Lifecycle callbacks for the `article` model.
@@ -52,4 +53,12 @@ module.exports = {
   // After destroying a value.
   // Fired after a `delete` query.
   // afterDestroy: async (model, attrs, options) => {}
-};
+
+  beforeSave: async (model, attrs, options) => {
+    if (options.method === "insert" && attrs.Title) {
+      model.set("Slug", slugify(attrs.Title, { lower: true }))
+    } else if (options.method === "update" && attrs.Title) {
+      attrs.Slug = slugify(attrs.Title, { lower: true })
+    }
+  },
+}

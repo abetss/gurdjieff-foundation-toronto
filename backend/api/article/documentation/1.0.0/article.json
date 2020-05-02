@@ -559,6 +559,9 @@
               },
               "Summary": {
                 "type": "string"
+              },
+              "Slug": {
+                "type": "string"
               }
             }
           },
@@ -569,6 +572,9 @@
             "type": "string"
           },
           "Summary": {
+            "type": "string"
+          },
+          "Slug": {
             "type": "string"
           }
         }
@@ -594,6 +600,9 @@
             "type": "string"
           },
           "Summary": {
+            "type": "string"
+          },
+          "Slug": {
             "type": "string"
           }
         }

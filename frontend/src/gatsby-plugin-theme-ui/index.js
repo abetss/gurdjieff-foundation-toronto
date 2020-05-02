@@ -38,6 +38,7 @@ export default {
     secondary: "#30c",
     accent: "#ffbd43",
     muted: "#f6f6f6",
+    'muted-darker': '#ededed'
   },
   breakpoints: ["40em", "56em", "64em"],
   styles,

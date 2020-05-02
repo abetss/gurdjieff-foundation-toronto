@@ -25,6 +25,7 @@ const Layout = ({ children }) => {
         styles={css`
           * {
             overflow-wrap: normal;
+            white-space: pre-line;
           }
         `}
       />

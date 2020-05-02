@@ -1,6 +1,7 @@
 /** @jsx jsx */
-import { jsx, Heading, Grid, Text, Divider, Link as ThLink, Card, Flex } from "theme-ui"
-import { Link, graphql } from "gatsby"
+import { jsx, Heading, Grid, Text } from "theme-ui"
+
+import { Link, graphql, navigate } from "gatsby"
 import { MdEmail, MdPhone } from "react-icons/md"
 
 import Layout from "../components/layout"
@@ -13,42 +14,53 @@ const ArticlesPage = ({
   data: {
     allStrapiArticle: { nodes: articles },
   },
-}) => (
-  <Layout>
-    <SEO title="Gurdjieff foundation Toronto - Articles" />
-    <div sx={{ pt: [3, 4, 4], maxWidth: [`90vw`, "85vw", "80vw"], mx: "auto" }}>
-      <Heading as="h1">Articles</Heading>
-      <Grid gap={4} columns={1} sx={{ mt: [2, 2, 3] }}>
-        {articles.map((article, i) => (
-          <Grid
-            // gap={2}
-            columns={1}
-            key={`contact-us-${article.id}`}
-            sx={{
-              display: "inline-grid",
-              bg: "muted",
-              my: [1, 2, 2],
-              px: 3,
-              py: 2,
-              borderRadius: 4,
-              boxShadow: "0 0 2px rgba(0, 0, 0, 0.125)",
-            }}
-          >
-            <Grid >
-              <Text as="span" sx={{ fontWeight: "bold", fontSize: 4 }}>
-                {article.Title}
-              </Text>
-              <Text as="span">by {article.Author}</Text>
+}) => {
+  const navigateToArticle = slug => {
+    navigate(`/articles/${slug}`)
+  }
+  console.log('articles', JSON.stringify(articles, null, 2));
+  return (
+    <Layout>
+      <SEO title="Gurdjieff foundation Toronto - Articles" />
+      <div sx={{ pt: [3, 4, 4], maxWidth: [`90vw`, "85vw", "80vw"], mx: "auto" }}>
+        <Heading as="h1">Articles</Heading>
+        <Grid gap={2} columns={1} sx={{ mt: [1, 1, 2] }}>
+          {articles.map((article, i) => (
+            <Grid
+              // gap={2}
+              onClick={() => navigateToArticle(article.Slug)}
+              columns={1}
+              key={`contact-us-${article.id}`}
+              sx={{
+                display: "inline-grid",
+                bg: "muted",
+                my: [1, 2, 2],
+                px: 3,
+                pt: 3,
+                pb: 1,
+                borderRadius: 2,
+                boxShadow: "0 0 2px rgba(0, 0, 0, 0.125)",
+                cursor: 'pointer',
+                '&:hover': {
+                  bg: 'muted-darker',
+                  transition: 'background-color 100ms linear'
+                }
+              }}
+            >
+              <Grid>
+                <Heading as="h2" sx={{ color: 'primary' }}>{article.Title}</Heading>
+                <Heading as="h3">by {article.Author}</Heading>
+              </Grid>
+              <MDXProvider>
+                <MDXRenderer>{article.childStrapiArticleSummary.childMdx.body}</MDXRenderer>
+              </MDXProvider>
             </Grid>
-            <MDXProvider>
-              <MDXRenderer>{article.childStrapiArticleSummary.childMdx.body}</MDXRenderer>
-            </MDXProvider>
-          </Grid>
-        ))}
-      </Grid>
-    </div>
-  </Layout>
-)
+          ))}
+        </Grid>
+      </div>
+    </Layout>
+  )
+}
 
 export default ArticlesPage
 
@@ -56,7 +68,6 @@ export const query = graphql`
   query ArticlesQuery {
     allStrapiArticle {
       nodes {
-        id
         Title
         Author
         childStrapiArticleSummary {
@@ -64,6 +75,7 @@ export const query = graphql`
             body
           }
         }
+        Slug
       }
     }
   }

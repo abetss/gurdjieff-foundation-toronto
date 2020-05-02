@@ -1,4 +1,17 @@
 const crypto = require("crypto");
+const path = require(`path`);
+
+const makeRequest = (graphql, request) => new Promise((resolve, reject) => {
+  resolve(
+    graphql(request).then(result => {
+      if (result.errors) {
+        reject(result.errors)
+      }
+
+      return result;
+    })
+  )
+});
 
 const createMdxNode = (contentType, contentProperty, { node, actions, createNodeId }) => {
     if (node.internal.type === contentType) {
@@ -30,72 +43,64 @@ module.exports.onCreateNode = async (onCreateNodeProps) => {
     createMdxNode('StrapiArticle', 'Footer', onCreateNodeProps);
     createMdxNode('StrapiArticle', 'Content', onCreateNodeProps);
     createMdxNode('StrapiArticle', 'Summary', onCreateNodeProps);
-
-    // if (node.internal.type === "StrapiHomePage") {
-    //     const newNode = {
-    //         id: createNodeId(`StrapiHomePageContent-${node.id}`),
-    //         parent: node.id,
-    //         children: [],
-    //         internal: {
-    //             content: node.content || " ",
-    //             type: "StrapiHomePageContent",
-    //             mediaType: "text/markdown",
-    //             contentDigest: crypto
-    //                 .createHash("md5")
-    //                 .update(node.content || " ")
-    //                 .digest("hex"),
-    //         },
-    //     };
-    //     actions.createNode(newNode);
-    //     actions.createParentChildLink({
-    //         parent: node,
-    //         child: newNode,
-    //     });
-    // }
-
-//     if (node.internal.type === "StrapiArticle") {
-//         const contentTypes = ['Footer', 'Content'];
-
-//         let nodeTransformedContents = [];
-
-//         node.Contents.forEach(content => {
-//             console.log('node', node.Title);
-
-//             contentTypes.forEach(contentType => {
-//                 if(!content[contentType]) return;
-
-//                 const newNode = {
-//                     id: createNodeId(`StrapiArticle-${contentType}-${node.id}`),
-//                     parent: node.id,
-//                     children: [],
-//                     internal: {
-//                         content: content[contentType] || " ",
-//                         type: contentType,
-//                         mediaType: "text/markdown",
-//                         contentDigest: crypto
-//                             .createHash("md5")
-//                             .update(node.content || " ")
-//                             .digest("hex"),
-//                     },
-//                 };
-//                 actions.createNode(newNode);
-//                 actions.createParentChildLink({
-//                     parent: node,
-//                     child: newNode,
-//                 });
-//                 console.log('newNode', JSON.stringify(newNode.id, null, 2));
-//                 nodeTransformedContents.push({
-//                     id: newNode.id,
-//                     type: contentType
-//                 });
-//             })
-
-//         })
-
-//         actions.createNodeField({
-//             node,
-//             name: `mdxContents`,
-//             value: nodeTransformedContents
-//         })
-//     }
 };
+
+exports.createPages = async ({ actions, graphql }) => {
+    const { createPage } = actions;
+
+    const result = await graphql( `
+      {
+        allStrapiArticle {
+          edges {
+            node {
+              strapiId
+              Slug
+            }
+          }
+        }
+      }
+      `);
+
+    result.data.allStrapiArticle.edges.forEach(({ node }) => {
+      console.log('node', JSON.stringify(node, null, 2));
+      createPage({
+        path: `/articles/${node.Slug}`,
+        component: path.resolve(`src/templates/article.js`),
+        context: {
+          id: node.strapiId,
+        },
+      })
+    })
+    // Query for articles nodes to use in creating pages.
+    // return getArticles;
+
+  //   const { createPage } = actions
+  //   const result = await graphql(
+  //     `
+  //       {
+  //         articles: allStrapiArticle {
+  //           nodes {
+  //             strapiId
+  //             Slug
+  //           }
+  //         }
+  //       }
+  //     `
+  //   )
+
+  // if (result.errors) {
+  //   throw result.errors
+  // }
+
+  // // Create blog articles pages.
+  // const articles = result.data.articles.nodes
+  // articles.forEach((article, index) => {
+  //   createPage({
+  //     path: `/article/${article.Slug}`,
+  //     component: require.resolve("./src/templates/article.js"),
+  //     context: {
+  //       id: article.node.strapiId,
+  //     },
+  //   })
+  // })
+  };

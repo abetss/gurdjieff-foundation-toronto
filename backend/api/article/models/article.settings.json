@@ -29,6 +29,9 @@
     },
     "Summary": {
       "type": "richtext"
+    },
+    "Slug": {
+      "type": "string"
     }
   }
 }
