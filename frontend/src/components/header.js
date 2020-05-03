@@ -7,7 +7,6 @@ const Header = ({ title, subTitle }) => (
   <header
     sx={{
       bg: `primary`,
-      mb: 2,
     }}
   >
     <div sx={{ py: 2, variant: "container.margin" }}>

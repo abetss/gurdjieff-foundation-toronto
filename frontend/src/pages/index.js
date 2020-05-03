@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx, Grid, Heading, Divider } from "theme-ui"
+import { jsx, Grid, Heading, Divider, Container } from "theme-ui"
 import { graphql, navigate } from "gatsby"
 import { Flex, Text } from "theme-ui"
 import Img from "gatsby-image"
@@ -23,28 +23,28 @@ const IndexPage = ({
   return (
     <Layout>
       <SEO title="Gurdjieff foundation Toronto" />
-      <div sx={{ mt: -2, width: "100%", bg: "muted", color: "primary" }}>
-        <Flex
+      <div sx={{ width: "100%", bg: "muted", color: "primary" }}>
+        <Container
           sx={{
-            variant: "container.margin",
+            display: "flex",
             justifyContent: "center",
             alignItems: ["start", "center", "center"],
-            py: [3, 4, 5],
+            py: [4, 4, 5],
           }}
         >
           <Text
             sx={{
-              fontSize: 6,
+              fontSize: [5, 5, 6],
               fontFamily: "quote",
             }}
             as="blockquote"
           >
             " {quote} "
           </Text>
-        </Flex>
+        </Container>
       </div>
 
-      <div sx={{ variant: "container.margin", mt: 5 }}>
+      <Container>
         <div sx={{ display: "inline-block" }}>
           <Img
             sx={{ float: "left ", mr: [4, 4, 5], mb: [3, 3, 4], width: 350 }}
@@ -56,9 +56,9 @@ const IndexPage = ({
             </MDXProvider>
           </div>
         </div>
-      </div>
-      <div sx={{ variant: "container.margin" }}>
-        <Divider sx={{ mt: 5, mb: 5 }} />
+      </Container>
+      <Container>
+        <Divider sx={{ mb: [4, 4, 5] }} />
         <H1>Latest Articles</H1>
         <Grid gap={1} columns={1} sx={{ mt: [3, 3, 4] }}>
           {articles.map((article, i) => (
@@ -72,15 +72,13 @@ const IndexPage = ({
             </Flex>
           ))}
         </Grid>
-      </div>
-
-      {/* <div sx={{ mt: 7, bg: 'secondary', '& p, & h1, & h2, & h3': {color: 'background'}, '& a': { color: 'primary-darker'} }}> */}
-      <div sx={{ mt: 5, bg: "secondary", "& a": { color: "primary-darker" } }}>
-        <div sx={{ variant: "container.margin", py: 3 }}>
+      </Container>
+      <div sx={{ mt: [4, 4, 5], bg: "secondary", "& a": { color: "primary-darker" } }}>
+        <Container sx={{ py: [3, 3, 3] }}>
           <MDXProvider>
             <MDXRenderer>{childStrapiHomePageLinks.childMdx.body}</MDXRenderer>
           </MDXProvider>
-        </div>
+        </Container>
       </div>
     </Layout>
   )

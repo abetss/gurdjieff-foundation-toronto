@@ -1,11 +1,12 @@
 /** @jsx jsx */
-import { jsx, Heading, Grid, Text, Link as ThLink, Flex } from "theme-ui"
+import { jsx, Heading, Grid, Text, Link as ThLink, Flex, Container } from "theme-ui"
 import { graphql } from "gatsby"
 import { MdEmail, MdPhone } from "react-icons/md"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { Fragment } from "react"
+import { H1 } from "../components"
 
 const ContactUsPage = ({
   data: {
@@ -13,21 +14,18 @@ const ContactUsPage = ({
   },
 }) => (
   <Layout>
-    <SEO title={title} />
-    <div sx={{ pt: [3, 4, 4], maxWidth: [`90vw`, "85vw", "80vw"], mx: "auto" }}>
-      <Heading as="h1">{title}</Heading>
-      <Grid gap={4} columns={[1, 2, 2]} sx={{ mt: [2, 2, 3] }}>
-        {contacts.map((contact, i) => (
-          <Fragment>
-            {/* {i > 0 && <Divider sx={{ color: "muted" }} />} */}
-            <Grid
+    <SEO title={`Gurdjieff foundation Toronto - ${title}`} />
+    <Container>
+      <H1>{title}</H1>
+      <Grid gap={[3,3,4]} columns={[1, 1, 2]} pt={[3,4,4]} >
+        {contacts.map(contact => (
+          <Grid
               // gap={2}
-              columns={1}
               key={`contact-us-${contact.id}`}
+              columns={1}
               sx={{
                 display: "inline-grid",
                 bg: "muted",
-                my: [3, 4, 4],
                 px: 3,
                 py: 2,
                 borderRadius: 4,
@@ -48,10 +46,9 @@ const ContactUsPage = ({
                 </ThLink>
               </Flex>
             </Grid>
-          </Fragment>
         ))}
       </Grid>
-    </div>
+    </Container>
   </Layout>
 )
 

@@ -12,7 +12,7 @@ export default {
     monospace: "Menlo, monospace",
     quote: 'Merienda, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif',
   },
-  fontSizes: [14, 16, 18, 22, 26, 31, 36, 42, 50],
+  fontSizes: [14, 16, 18, 22, 26, 32, 40, 48, 58],
   fontWeights: {
     body: 400,
     heading: 700,
@@ -46,6 +46,13 @@ export default {
     'muted-darker': '#ededed'
   },
   breakpoints: ["40em", "56em", "64em"],
+  layout: {
+    container: {
+      mx: `auto`,
+      maxWidth: [`90vw`, "85vw", "80vw"],
+      pt: [4, 4, 5],
+    }
+  },
   styles,
   ...variants,
 }

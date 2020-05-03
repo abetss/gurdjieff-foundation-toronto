@@ -27,6 +27,9 @@ export default {
       mx: `auto`,
       maxWidth: [`90vw`, "85vw", "80vw"],
     },
+    containerTop: {
+      pt: [3, 4, 5],
+    },
   },
   text: {
     caps: {

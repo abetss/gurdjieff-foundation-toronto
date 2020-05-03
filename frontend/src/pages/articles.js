@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx, Heading, Grid, Text } from "theme-ui"
+import { jsx, Heading, Grid, Text, Container } from "theme-ui"
 
 import { Link, graphql, navigate } from "gatsby"
 import { MdEmail, MdPhone } from "react-icons/md"
@@ -9,6 +9,7 @@ import SEO from "../components/seo"
 import { Fragment } from "react"
 import { MDXProvider } from "@mdx-js/react"
 import { MDXRenderer } from "gatsby-plugin-mdx"
+import { H1, H2, H3 } from "../components"
 
 const ArticlesPage = ({
   data: {
@@ -18,19 +19,18 @@ const ArticlesPage = ({
   const navigateToArticle = slug => {
     navigate(`/articles/${slug}`)
   }
-  console.log('articles', JSON.stringify(articles, null, 2));
   return (
     <Layout>
       <SEO title="Gurdjieff foundation Toronto - Articles" />
-      <div sx={{ pt: [3, 4, 4], maxWidth: [`90vw`, "85vw", "80vw"], mx: "auto" }}>
-        <Heading as="h1">Articles</Heading>
-        <Grid gap={2} columns={1} sx={{ mt: [1, 1, 2] }}>
+      <Container>
+        <H1>Articles</H1>
+        <Grid gap={2} columns={1} pt={[3,4,4]}>
           {articles.map((article, i) => (
             <Grid
               // gap={2}
               onClick={() => navigateToArticle(article.Slug)}
               columns={1}
-              key={`contact-us-${article.id}`}
+              key={`article-${article.id}`}
               sx={{
                 display: "inline-grid",
                 bg: "muted",
@@ -48,8 +48,8 @@ const ArticlesPage = ({
               }}
             >
               <Grid>
-                <Heading as="h2" sx={{ color: 'primary' }}>{article.Title}</Heading>
-                <Heading as="h3">by {article.Author}</Heading>
+                <H2 sx={{ color: 'primary' }}>{article.Title}</H2>
+                <H3>by {article.Author}</H3>
               </Grid>
               <MDXProvider>
                 <MDXRenderer>{article.childStrapiArticleSummary.childMdx.body}</MDXRenderer>
@@ -57,7 +57,7 @@ const ArticlesPage = ({
             </Grid>
           ))}
         </Grid>
-      </div>
+      </Container>
     </Layout>
   )
 }
@@ -68,6 +68,7 @@ export const query = graphql`
   query ArticlesQuery {
     allStrapiArticle {
       nodes {
+        id
         Title
         Author
         childStrapiArticleSummary {
