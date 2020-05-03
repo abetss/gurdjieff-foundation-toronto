@@ -1,12 +1,11 @@
 /** @jsx jsx */
-import { jsx, Heading, Divider, Container } from "theme-ui"
+import { jsx, Divider, Container } from "theme-ui"
 import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { MDXProvider } from "@mdx-js/react"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 import { H1, H2 } from "../components"
-const ReactMarkdown = require('react-markdown')
 
 const ArticleTemplate = ({ data: { article } }) => (
   <Layout>

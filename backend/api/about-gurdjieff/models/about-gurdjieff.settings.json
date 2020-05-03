@@ -1,0 +1,25 @@
+{
+  "kind": "collectionType",
+  "collectionName": "gurdjieffs_pages",
+  "info": {
+    "name": "Gurdjieff Pages"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "Title": {
+      "type": "string",
+      "private": false,
+      "required": true
+    },
+    "Content": {
+      "type": "richtext",
+      "required": true
+    },
+    "Slug": {
+      "type": "string"
+    }
+  }
+}

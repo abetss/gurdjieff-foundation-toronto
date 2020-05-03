@@ -1,11 +1,10 @@
 /** @jsx jsx */
-import { jsx, Heading, Grid, Text, Link as ThLink, Flex, Container } from "theme-ui"
+import { jsx, Grid, Text, Link as ThLink, Flex, Container } from "theme-ui"
 import { graphql } from "gatsby"
 import { MdEmail, MdPhone } from "react-icons/md"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import { Fragment } from "react"
 import { H1 } from "../components"
 
 const ContactUsPage = ({

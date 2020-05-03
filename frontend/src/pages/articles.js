@@ -1,12 +1,8 @@
 /** @jsx jsx */
-import { jsx, Heading, Grid, Text, Container } from "theme-ui"
-
-import { Link, graphql, navigate } from "gatsby"
-import { MdEmail, MdPhone } from "react-icons/md"
-
+import { jsx, Grid, Container } from "theme-ui"
+import { graphql, navigate } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import { Fragment } from "react"
 import { MDXProvider } from "@mdx-js/react"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 import { H1, H2, H3 } from "../components"

@@ -24,9 +24,17 @@ module.exports = {
       resolve: "gatsby-source-strapi",
       options: {
         apiURL: process.env.API_URL || "http://localhost:1337",
-        contentTypes: ["article"],
+        contentTypes: ["article", "about-gurdjieff"],
         singleTypes: [`home-page`, "contact-us"],
         queryLimit: 1000,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-material-ui`,
+      options: {
+        stylesProvider: {
+          injectFirst: false,
+        },
       },
     },
     "gatsby-transformer-sharp",
@@ -42,7 +50,7 @@ module.exports = {
         display: "minimal-ui",
       },
     },
-    // "gatsby-plugin-offline", // TODO: uncomment this for production
+    "gatsby-plugin-offline",
     "gatsby-plugin-theme-ui",
     `gatsby-plugin-mdx`,
     {

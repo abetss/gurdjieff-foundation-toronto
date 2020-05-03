@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx, Grid, Heading, Divider, Container } from "theme-ui"
+import { jsx, Grid, Divider, Container } from "theme-ui"
 import { graphql, navigate } from "gatsby"
 import { Flex, Text } from "theme-ui"
 import Img from "gatsby-image"
@@ -116,6 +116,7 @@ export const query = graphql`
     }
     allStrapiArticle {
       nodes {
+        id
         Title
         Author
         Slug

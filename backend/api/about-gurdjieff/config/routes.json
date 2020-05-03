@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/about-gurdjieffs",
+      "handler": "about-gurdjieff.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/about-gurdjieffs/count",
+      "handler": "about-gurdjieff.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/about-gurdjieffs/:id",
+      "handler": "about-gurdjieff.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/about-gurdjieffs",
+      "handler": "about-gurdjieff.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/about-gurdjieffs/:id",
+      "handler": "about-gurdjieff.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/about-gurdjieffs/:id",
+      "handler": "about-gurdjieff.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}
