@@ -516,7 +516,11 @@
     "schemas": {
       "Article": {
         "required": [
-          "id"
+          "id",
+          "Title",
+          "Author",
+          "Content",
+          "Summary"
         ],
         "properties": {
           "id": {
@@ -533,7 +537,11 @@
           },
           "articles": {
             "required": [
-              "id"
+              "id",
+              "Title",
+              "Author",
+              "Content",
+              "Summary"
             ],
             "properties": {
               "id": {
@@ -580,6 +588,12 @@
         }
       },
       "NewArticle": {
+        "required": [
+          "Title",
+          "Author",
+          "Content",
+          "Summary"
+        ],
         "properties": {
           "Title": {
             "type": "string"

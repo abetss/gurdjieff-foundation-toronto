@@ -10,13 +10,15 @@
   },
   "attributes": {
     "Title": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "CreateDate": {
       "type": "datetime"
     },
     "Author": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "articles": {
       "collection": "article"
@@ -25,10 +27,12 @@
       "type": "richtext"
     },
     "Content": {
-      "type": "richtext"
+      "type": "richtext",
+      "required": true
     },
     "Summary": {
-      "type": "richtext"
+      "type": "richtext",
+      "required": true
     },
     "Slug": {
       "type": "string"
