@@ -28,4 +28,15 @@ export default {
       maxWidth: [`90vw`, "85vw", "80vw"],
     },
   },
+  text: {
+    caps: {
+      textTransform: 'uppercase',
+      letterSpacing: '0.2em',
+    },
+    heading: {
+      fontFamily: 'heading',
+      fontWeight: 'heading',
+      lineHeight: 'heading',
+    },
+  }
 }

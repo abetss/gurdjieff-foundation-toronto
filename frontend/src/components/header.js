@@ -49,7 +49,7 @@ const Header = ({ title, subTitle }) => (
             Home
           </Link>
           <Link sx={{ variant: "links.nav" }} to="/about/">
-            About
+            Gurdjieff
           </Link>
           <Link sx={{ variant: "links.nav" }} to="/articles">
             Articles

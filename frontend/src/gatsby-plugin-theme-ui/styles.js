@@ -41,7 +41,18 @@ export default {
     ...heading,
     fontSize: 0,
   },
+  hr: {
+    color: "primary",
+    borderWidth: '2px',
+    borderStyle: 'dashed'
+  },
   p: {
+    color: "text",
+    fontFamily: "body",
+    fontWeight: "body",
+    lineHeight: "body",
+  },
+  span: {
     color: "text",
     fontFamily: "body",
     fontWeight: "body",
