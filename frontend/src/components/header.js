@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx, Flex, NavLink, Heading } from "theme-ui"
+import { jsx, Flex, NavLink, Heading, Container } from "theme-ui"
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
 
@@ -9,20 +9,20 @@ const Header = ({ title, subTitle }) => (
       bg: `primary`,
     }}
   >
-    <div sx={{ py: 2, variant: "container.margin" }}>
+    <Container sx={{ pt: [2, 3, 3], pb: [2, 2, 2] }}>
       <Link
         to="/"
         sx={{
           color: `background`,
           textDecoration: `none`,
           display: "flex",
-          alignItems: ["flex-start", "center", "center"],
+          alignItems: ["flex-start", "flex-end", "flex-end"],
           flexDirection: ["column", "row", "row"],
-          flexWrap: 'wrap',
+          flexWrap: "wrap",
           letterSpacing: "0.1em",
         }}
       >
-        <Heading as="h1" sx={{ margin: 0, fontSize: 5, whiteSpace: "nowrap", fontFamily: 'logo' }}>
+        <Heading as="h1" sx={{ margin: 0, fontSize: 5, whiteSpace: "nowrap", fontFamily: "logo" }}>
           {title}
         </Heading>
         <Heading
@@ -30,8 +30,9 @@ const Header = ({ title, subTitle }) => (
           sx={{
             margin: 0,
             fontSize: 4,
-            fontFamily: 'logo',
+            fontFamily: "logo",
             whiteSpace: "nowrap",
+            mt: [1, 0, 0],
             ml: [0, 1, 1],
             "::before": { content: ['""', '" - "', '" - "'] },
           }}
@@ -39,10 +40,7 @@ const Header = ({ title, subTitle }) => (
           {subTitle}
         </Heading>
       </Link>
-      <Flex
-        as="nav"
-        sx={{ mt: [2, 0, 0], justifyContent: "space-between", flexDirection: "row", flexWrap: 'wrap' }}
-      >
+      <Flex as="nav" sx={{ mt: [2, 2, 2], justifyContent: "space-between", flexDirection: "row", flexWrap: "wrap" }}>
         <Flex sx={{ flexDirection: ["column", "row", "row"] }}>
           <Link sx={{ variant: "links.nav" }} to="/">
             Home
@@ -63,16 +61,8 @@ const Header = ({ title, subTitle }) => (
           </NavLink>
         </Flex>
       </Flex>
-    </div>
+    </Container>
   </header>
 )
-
-Header.propTypes = {
-  siteTitle: PropTypes.string,
-}
-
-Header.defaultProps = {
-  siteTitle: ``,
-}
 
 export default Header

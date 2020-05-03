@@ -4,7 +4,7 @@ export default {
       pr: 4,
       py: 1,
       textTransform: "uppercase",
-      fontWeight: "bold",
+      fontWeight: ['bold', 500],
       letterSpacing: "0.1em",
       color: "accent",
       whiteSpace: "nowrap",
