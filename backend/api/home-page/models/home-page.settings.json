@@ -25,6 +25,9 @@
       ],
       "plugin": "upload",
       "required": false
+    },
+    "Links": {
+      "type": "richtext"
     }
   }
 }

@@ -1,18 +1,6 @@
 const crypto = require("crypto");
 const path = require(`path`);
 
-const makeRequest = (graphql, request) => new Promise((resolve, reject) => {
-  resolve(
-    graphql(request).then(result => {
-      if (result.errors) {
-        reject(result.errors)
-      }
-
-      return result;
-    })
-  )
-});
-
 const createMdxNode = (contentType, contentProperty, { node, actions, createNodeId }) => {
     if (node.internal.type === contentType) {
         const newContentType = `${contentType}${contentProperty}`;
@@ -40,6 +28,7 @@ const createMdxNode = (contentType, contentProperty, { node, actions, createNode
 
 module.exports.onCreateNode = async (onCreateNodeProps) => {
     createMdxNode('StrapiHomePage', 'content', onCreateNodeProps);
+    createMdxNode('StrapiHomePage', 'Links', onCreateNodeProps);
     createMdxNode('StrapiArticle', 'Footer', onCreateNodeProps);
     createMdxNode('StrapiArticle', 'Content', onCreateNodeProps);
     createMdxNode('StrapiArticle', 'Summary', onCreateNodeProps);
@@ -71,36 +60,4 @@ exports.createPages = async ({ actions, graphql }) => {
         },
       })
     })
-    // Query for articles nodes to use in creating pages.
-    // return getArticles;
-
-  //   const { createPage } = actions
-  //   const result = await graphql(
-  //     `
-  //       {
-  //         articles: allStrapiArticle {
-  //           nodes {
-  //             strapiId
-  //             Slug
-  //           }
-  //         }
-  //       }
-  //     `
-  //   )
-
-  // if (result.errors) {
-  //   throw result.errors
-  // }
-
-  // // Create blog articles pages.
-  // const articles = result.data.articles.nodes
-  // articles.forEach((article, index) => {
-  //   createPage({
-  //     path: `/article/${article.Slug}`,
-  //     component: require.resolve("./src/templates/article.js"),
-  //     context: {
-  //       id: article.node.strapiId,
-  //     },
-  //   })
-  // })
   };

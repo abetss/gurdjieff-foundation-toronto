@@ -2,7 +2,7 @@ import styles from "./styles"
 import variants from "./variants"
 
 export default {
-  space: [0, 4, 8, 16, 32, 64, 128, 256, 512],
+  space: [0, 4, 8, 16, 32, 64, 128, 192 , 256, 512],
   sizes: [16, 32, 64, 128, 256, 512, 1024],
   fonts: {
     body: 'system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif',
@@ -34,8 +34,13 @@ export default {
     background: "#fff",
     // primary: "#07c",
     primary: "#006ab6",
+    'primary-darker': "#005c9d",
+    'primary-light': "#9cd6ff",
     // primary: "rgb(34, 117, 148)",
-    secondary: "#30c",
+    // secondary: "#5e20d0",
+    // secondary: "#0b3771",
+    // secondary: "#fff6c5",
+    secondary: "#ffcf77",
     accent: "#ffbd43",
     muted: "#f6f6f6",
     'muted-darker': '#ededed'

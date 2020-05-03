@@ -389,6 +389,9 @@
                 "type": "string"
               }
             }
+          },
+          "Links": {
+            "type": "string"
           }
         }
       },
@@ -398,6 +401,9 @@
             "type": "string"
           },
           "content": {
+            "type": "string"
+          },
+          "Links": {
             "type": "string"
           }
         }

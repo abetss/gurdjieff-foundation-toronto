@@ -11,7 +11,7 @@ import SEO from "../components/seo"
 
 const IndexPage = ({
   data: {
-    strapiHomePage: { quote, childStrapiHomePagecontent, contentImage },
+    strapiHomePage: { quote, childStrapiHomePagecontent, contentImage, childStrapiHomePageLinks },
   },
 }) => (
   <Layout>
@@ -48,6 +48,14 @@ const IndexPage = ({
         </MDXProvider>
       </div>
     </div>
+    {/* <div sx={{ mt: 7, bg: 'secondary', '& p, & h1, & h2, & h3': {color: 'background'}, '& a': { color: 'primary-darker'} }}> */}
+    <div sx={{ mt: 7, bg: 'secondary', '& a': { color: 'primary-darker'} }}>
+      <div sx={{ variant: "container.margin", py: 3 }}>
+        <MDXProvider>
+          <MDXRenderer>{childStrapiHomePageLinks.childMdx.body}</MDXRenderer>
+        </MDXProvider>
+      </div>
+    </div>
   </Layout>
 )
 
@@ -62,6 +70,11 @@ export const query = graphql`
           body
         }
       }
+      childStrapiHomePageLinks {
+      childMdx {
+        body
+      }
+    }
       contentImage {
         id
         relativePath
