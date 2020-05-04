@@ -5,7 +5,7 @@
   "description": "A Strapi application",
   "scripts": {
     "develop": "NODE_TLS_REJECT_UNAUTHORIZED='0' yarn strapi develop",
-    "start": "strapi start",
+    "start": "NODE_TLS_REJECT_UNAUTHORIZED='0' yarn strapi start",
     "build": "strapi build",
     "strapi": "strapi"
   },
