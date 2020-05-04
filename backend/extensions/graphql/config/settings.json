@@ -1,5 +1,5 @@
 {
-  "endpoint": "/graphql",
+  "endpoint": "/graphql-play",
   "tracing": false,
   "shadowCRUD": true,
   "playgroundAlways": true,
