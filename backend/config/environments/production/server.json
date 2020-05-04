@@ -6,7 +6,7 @@
     "enabled": false
   },
   "cron": {
-    "enabled": true
+    "enabled": false
   },
   "admin": {
     "autoOpen": false
