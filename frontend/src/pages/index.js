@@ -45,9 +45,9 @@ const IndexPage = ({
       </div>
 
       <Container>
-        <div sx={{ display: "inline-block" }}>
+        <div sx={{ display: "inline-block", maxWidth: 'inherit' }}>
           <Img
-            sx={{ float: "left ", mr: [4, 4, 5], mb: [3, 3, 4], width: 350 }}
+            sx={{ float: "left ", mr: [4, 4, 5], mb: [3, 3, 4], width: 350, maxWidth: ['100%', 350, 350] }}
             fluid={contentImage.childImageSharp.fluid}
           />
           <div>
