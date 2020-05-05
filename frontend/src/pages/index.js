@@ -60,7 +60,7 @@ const IndexPage = ({
       <Container>
         <Divider sx={{ mb: [4, 4, 5] }} />
         <H1>Latest Articles</H1>
-        <Grid gap={[2, 1, 1]} columns={1} sx={{ mt: [3, 3, 4] }}>
+        <Grid gap={[2, 1, 1]} columns={1} sx={{ mt: [3, 3, 3] }}>
           {articles.map((article, i) => (
             <Flex
               sx={{ flexDirection: ["column", "row", "row"] }}
