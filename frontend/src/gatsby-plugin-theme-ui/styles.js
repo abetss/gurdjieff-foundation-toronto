@@ -3,6 +3,7 @@ const heading = {
   fontFamily: "heading",
   lineHeight: "heading",
   fontWeight: "heading",
+  marginBottom: 0
 }
 
 export default {
@@ -19,6 +20,7 @@ export default {
   h1: {
     ...heading,
     fontSize: [5, 6],
+    lineHeight: '1.425',
   },
   h2: {
     ...heading,

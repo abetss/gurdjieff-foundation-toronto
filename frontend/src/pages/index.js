@@ -60,13 +60,17 @@ const IndexPage = ({
       <Container>
         <Divider sx={{ mb: [4, 4, 5] }} />
         <H1>Latest Articles</H1>
-        <Grid gap={1} columns={1} sx={{ mt: [3, 3, 4] }}>
+        <Grid gap={[2, 1, 1]} columns={1} sx={{ mt: [3, 3, 4] }}>
           {articles.map((article, i) => (
-            <Flex key={`contact-us-${article.id}`} onClick={() => navigateToArticle(article.Slug)}>
+            <Flex
+              sx={{ flexDirection: ["column", "row", "row"] }}
+              key={`contact-us-${article.id}`}
+              onClick={() => navigateToArticle(article.Slug)}
+            >
               <Text as="span" sx={{ color: "primary", cursor: "pointer" }}>
                 {article.Title}
               </Text>
-              <Text as="span" sx={{ ml: 2 }}>
+              <Text as="span" sx={{ ml: [0, 2] }}>
                 by {article.Author}
               </Text>
             </Flex>

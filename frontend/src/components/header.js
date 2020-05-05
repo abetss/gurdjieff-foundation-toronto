@@ -46,7 +46,7 @@ const Header = ({ title, subTitle }) => {
             letterSpacing: "0.1em",
           }}
         >
-          <Heading as="h1" sx={{ margin: 0, fontSize: 5, whiteSpace: "nowrap", fontFamily: "logo" }}>
+          <Heading as="h1" sx={{ margin: 0, fontSize: 5, fontFamily: "logo" }}>
             {title}
           </Heading>
           <Heading
@@ -55,7 +55,6 @@ const Header = ({ title, subTitle }) => {
               margin: 0,
               fontSize: 4,
               fontFamily: "logo",
-              whiteSpace: "nowrap",
               mt: [1, 0, 0],
               ml: [0, 1, 1],
               "::before": { content: ['""', '" - "', '" - "'] },
