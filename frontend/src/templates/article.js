@@ -15,7 +15,7 @@ const ArticleTemplate = ({ data: { article } }) => (
       <H2 sx={{ mt:[3,4,4] }}>
         By {article.Author}
       </H2>
-      <Divider sx={{ mb: [3,4,4], mt:[3,4,4], borderStyle: 'solid', borderWidth: 3, color: 'primary', bg: 'primary' }}/>
+      <Divider sx={{ mb: [3,4,4], mt:[3,4,4], borderStyle: 'solid', borderWidth: 2, color: 'muted-darker', bg: 'muted-darker' }}/>
       <MDXProvider>
         <MDXRenderer>{article.childStrapiArticleContent.childMdx.body}</MDXRenderer>
       </MDXProvider>
