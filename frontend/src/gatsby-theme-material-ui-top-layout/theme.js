@@ -19,4 +19,6 @@ const muTheme = createMuiTheme({
   },
 })
 
+console.log('muTheme', JSON.stringify(muTheme, null, 2));
+
 export default muTheme

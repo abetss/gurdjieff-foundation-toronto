@@ -20,7 +20,7 @@ const ArticleTemplate = ({ data: { article } }) => (
         <MDXRenderer>{article.childStrapiArticleContent.childMdx.body}</MDXRenderer>
       </MDXProvider>
       <Divider sx={{ my: 4, color: 'muted'}}/>
-      <div sx={{ '& p, & h1, & h2, & h3': { color: 'gray' }}}>
+      <div sx={{ '& p, & h1, & h2, & h3': { color: 'text-muted' }}}>
         <MDXProvider>
           <MDXRenderer>{article.childStrapiArticleFooter.childMdx.body}</MDXRenderer>
         </MDXProvider>

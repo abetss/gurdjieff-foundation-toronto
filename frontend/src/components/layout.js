@@ -34,7 +34,7 @@ const Layout = ({ children }) => {
           <Header title={data.site.siteMetadata.title} subTitle={data.site.siteMetadata.subTitle} />
           <main>{children}</main>
         </div>
-        <footer sx={{ mt: 5, pb: 4, variant: "container.margin", display: "flex", justifyContent: "center", color: "grey" }}>
+        <footer sx={{ mt: 5, pb: 4, variant: "container.margin", display: "flex", justifyContent: "center", color: "text-muted" }}>
           <span>© {new Date().getFullYear()}, Gurdjieff Traditional Studies</span>
         </footer>
       </div>

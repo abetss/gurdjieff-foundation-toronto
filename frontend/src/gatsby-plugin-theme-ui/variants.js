@@ -6,15 +6,15 @@ export const variants = {
       textTransform: "uppercase",
       fontWeight: ['bold', 500],
       letterSpacing: "0.1em",
-      color: "accent",
+      color: "header.secondary",
       whiteSpace: "nowrap",
       textDecoration: "none",
       "&:hover": {
-        color: "accent",
+        color: "header.secondary",
         opacity: 0.9,
       },
       "&:active, &:focus": {
-        color: "accent",
+        color: "header.secondary",
       },
     },
   },
@@ -40,6 +40,15 @@ export const variants = {
       fontFamily: 'heading',
       fontWeight: 'heading',
       lineHeight: 'heading',
+    },
+  },
+  texture: {
+    crisp: {
+      backgroundImage: 'none',
+
+    },
+    paper: {
+      backgroundImage: 'url(https://www.transparenttextures.com/patterns/textured-paper.png)',
     },
   }
 }

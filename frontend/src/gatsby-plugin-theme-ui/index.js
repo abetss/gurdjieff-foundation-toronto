@@ -39,7 +39,6 @@ export default {
       pt: [4, 4, 5],
     }
   },
-  initialColorModeName: 'light',
   colors,
   styles,
   ...variants,
