@@ -6,7 +6,7 @@ const heading = {
   marginBottom: 0
 }
 
-export default {
+export const styles = {
   root: {
     fontFamily: "body",
     lineHeight: "body",

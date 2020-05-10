@@ -1,5 +1,6 @@
-import styles from "./styles"
-import variants from "./variants"
+import { styles } from "./styles"
+import { variants } from "./variants"
+import { colors } from "./colors"
 
 export default {
   space: [0, 4, 8, 16, 32, 64, 128, 192 , 256, 512],
@@ -29,17 +30,7 @@ export default {
     mega: "0.25em",
   },
   borders: [0, "1px solid", "2px solid", "4px solid", "8px solid", "16px solid", "32px solid"],
-  colors: {
-    text: "#000",
-    background: "#fff",
-    primary: "#006ab6",
-    'primary-darker': "#005c9d",
-    'primary-light': "#9cd6ff",
-    secondary: "#ffcf77",
-    accent: "#ffbd43",
-    muted: "#f6f6f6",
-    'muted-darker': '#ededed'
-  },
+
   breakpoints: ["40em", "56em", "64em"],
   layout: {
     container: {
@@ -48,6 +39,14 @@ export default {
       pt: [4, 4, 5],
     }
   },
+  initialColorModeName: 'light',
+  colors,
   styles,
   ...variants,
+  unused: {
+    body: {
+      backgroundColor: "#fffbd4",
+      backgroundImage: 'url(https://www.transparenttextures.com/patterns/textured-paper.png)',
+    }
+  }
 }

@@ -1,4 +1,4 @@
-export default {
+export const variants = {
   links: {
     nav: {
       pr: 4,
