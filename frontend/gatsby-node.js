@@ -66,7 +66,13 @@ const createAboutGurdjieffPages = async (actions, graphql) => {
 
   const result = await graphql(`
     {
-      allStrapiAboutGurdjieff {
+      gurdjieffPages: allStrapiAboutGurdjieff(filter: { Navigation_Menu: { eq: "About_Gurdjieff" } }) {
+        nodes {
+          strapiId
+          Slug
+        }
+      }
+      aboutUsPages: allStrapiAboutGurdjieff(filter: { Navigation_Menu: { eq: "About_Us" } }) {
         nodes {
           strapiId
           Slug
@@ -75,9 +81,19 @@ const createAboutGurdjieffPages = async (actions, graphql) => {
     }
   `)
 
-  result.data.allStrapiAboutGurdjieff.nodes.forEach(( node ) => {
+  result.data.gurdjieffPages.nodes.forEach(node => {
     createPage({
       path: `/gurdjieff/${node.Slug}`,
+      component: path.resolve(`src/templates/gurdjieff-page.js`),
+      context: {
+        id: node.strapiId,
+      },
+    })
+  })
+
+  result.data.aboutUsPages.nodes.forEach(node => {
+    createPage({
+      path: `/about-us/${node.Slug}`,
       component: path.resolve(`src/templates/gurdjieff-page.js`),
       context: {
         id: node.strapiId,
@@ -89,5 +105,5 @@ const createAboutGurdjieffPages = async (actions, graphql) => {
 exports.createPages = async ({ actions, graphql }) => {
   createArticlePages(actions, graphql)
   createAboutGurdjieffPages(actions, graphql)
-  return;
+  return
 }

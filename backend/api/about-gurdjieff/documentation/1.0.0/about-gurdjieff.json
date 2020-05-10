@@ -545,6 +545,13 @@
           },
           "Slug": {
             "type": "string"
+          },
+          "Navigation_Menu": {
+            "type": "string",
+            "enum": [
+              "About_Us",
+              "About_Gurdjieff"
+            ]
           }
         }
       },
@@ -562,6 +569,13 @@
           },
           "Slug": {
             "type": "string"
+          },
+          "Navigation_Menu": {
+            "type": "string",
+            "enum": [
+              "About_Us",
+              "About_Gurdjieff"
+            ]
           }
         }
       }

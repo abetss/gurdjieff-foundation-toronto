@@ -20,6 +20,13 @@
     },
     "Slug": {
       "type": "string"
+    },
+    "Navigation_Menu": {
+      "type": "enumeration",
+      "enum": [
+        "About_Us",
+        "About_Gurdjieff"
+      ]
     }
   }
 }
