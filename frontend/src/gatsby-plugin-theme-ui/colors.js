@@ -40,7 +40,8 @@ export const colors = {
       "primary-light": "#9cd6ff",
       secondary: "#ffcf77",
       accent: "#ffbd43",
-      muted: "#f6f6f6",
+      muted: "#faf5c3",
+      "muted-darker": "#f3edb2",
     },
   },
 }

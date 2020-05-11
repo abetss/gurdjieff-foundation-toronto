@@ -42,10 +42,4 @@ export default {
   colors,
   styles,
   ...variants,
-  unused: {
-    body: {
-      backgroundColor: "#fffbd4",
-      backgroundImage: 'url(https://www.transparenttextures.com/patterns/textured-paper.png)',
-    }
-  }
 }

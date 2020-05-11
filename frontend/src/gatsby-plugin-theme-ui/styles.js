@@ -1,3 +1,10 @@
+import texturedPaper from '../images/textured-paper.png';
+import handMadePaper from '../images/handmade-paper.png';
+import cardboardFlat from '../images/cardboard-flat.png';
+import beigePaper from '../images/beige-paper.png';
+import mooning from '../images/mooning.png';
+import mochaGrunge from '../images/mocha-grunge.png';
+
 const heading = {
   color: "heading",
   fontFamily: "heading",
@@ -5,6 +12,32 @@ const heading = {
   fontWeight: "heading",
   marginBottom: 0
 }
+
+const currentTexture = localStorage.getItem('theme-texture') || 'paper';
+
+const getBodyBackgroundImage = texture => {
+  switch(texture) {
+    case 'crisp':
+      return 'none';
+    case 'paper':
+      return `url(${handMadePaper})`;
+    case 'texturedPaper':
+      return `url(${texturedPaper})`;
+    case 'beigePaper':
+      return `url(${beigePaper})`;
+    case 'mooning':
+      return `url(${mooning})`;
+    case 'mochaGrunge':
+      return `url(${mochaGrunge})`;
+    case 'cardboardFlat':
+      return `url(${cardboardFlat})`;
+    default:
+      return `url(${handMadePaper})`;
+  }
+}
+
+const bodyBackgroundImage = getBodyBackgroundImage(currentTexture);
+
 
 export const styles = {
   root: {
@@ -16,6 +49,7 @@ export const styles = {
     fontSmoothing: "antialiased",
     fontKerning: "normal",
     fontFeatureSettings: `"kern", "liga", "clig", "calt"`,
+    backgroundImage: bodyBackgroundImage,
   },
   h1: {
     ...heading,

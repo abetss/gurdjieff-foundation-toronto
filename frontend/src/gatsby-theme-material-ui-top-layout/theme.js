@@ -1,5 +1,5 @@
 import { createMuiTheme } from "@material-ui/core"
-import theme from "../gatsby-plugin-theme-ui"
+// import theme from "../gatsby-plugin-theme-ui"
 
 const muTheme = createMuiTheme({
   palette: {

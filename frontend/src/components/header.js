@@ -1,14 +1,10 @@
 /** @jsx jsx */
 import { jsx, Flex, NavLink, Heading, Container, useColorMode } from "theme-ui"
-import React from "react"
 import { Link, useStaticQuery, graphql } from "gatsby"
-import { makeStyles } from "@material-ui/core/styles"
-import InputLabel from "@material-ui/core/InputLabel"
 import MenuItem from "@material-ui/core/MenuItem"
-import FormHelperText from "@material-ui/core/FormHelperText"
-import FormControl from "@material-ui/core/FormControl"
 import Select from "@material-ui/core/Select"
 import { DropDownNav } from "./drop-down-nav"
+import { useSelectTexture } from "../utils/hooks/useSelectTexture"
 
 const ThemeDropDown = ({ colorModeNames, selectedColorMode, handleChange }) => {
   return (
@@ -47,9 +43,19 @@ const Header = ({ title, subTitle }) => {
 
   const [colorMode, setColorMode] = useColorMode()
   const colorModes = [
-    { name: "Light Modern", value: "default" },
-    { name: "Dark Modern", value: "dark" },
-    { name: "Light Paper", value: "light-paper" },
+    { name: "Light", value: "default" },
+    { name: "Dark", value: "dark" },
+    { name: "Yellow", value: "light-paper" },
+  ]
+
+  const [texture, setTexture, headerTexture] = useSelectTexture()
+  const textureModes = [
+    { name: "Crisp", value: "crisp" },
+    { name: "Hand Made Paper", value: "paper" },
+    { name: "Textured Paper", value: "texturedPaper" },
+    { name: "Beige Paper", value: "beigePaper" },
+    { name: "Card Board Flat", value: "cardboardFlat" },
+    { name: "Mooning", value: "mooning" },
   ]
 
   const gurdjieffMenus = data.gurdjieffPages.nodes
@@ -59,6 +65,7 @@ const Header = ({ title, subTitle }) => {
     <header
       sx={{
         bg: `header.primary`,
+        variant: `texture.${headerTexture}`,
       }}
     >
       <Container sx={{ pt: [2, 3, 3], pb: [2, 2, 2] }}>
@@ -92,13 +99,22 @@ const Header = ({ title, subTitle }) => {
               {subTitle}
             </Heading>
           </Link>
-          <ThemeDropDown
-            colorModeNames={colorModes}
-            selectedColorMode={colorMode}
-            handleChange={e => {
-              setColorMode(e.target.value)
-            }}
-          />
+          <Flex>
+            <ThemeDropDown
+              colorModeNames={textureModes}
+              selectedColorMode={texture}
+              handleChange={e => {
+                setTexture(e.target.value)
+              }}
+            />
+            <ThemeDropDown
+              colorModeNames={colorModes}
+              selectedColorMode={colorMode}
+              handleChange={e => {
+                setColorMode(e.target.value)
+              }}
+            />
+          </Flex>
         </Flex>
 
         <Flex as="nav" sx={{ mt: [2, 2, 2], justifyContent: "space-between", flexDirection: "row", flexWrap: "wrap" }}>

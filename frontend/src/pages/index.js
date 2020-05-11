@@ -1,7 +1,6 @@
 /** @jsx jsx */
-import { jsx, Grid, Divider, Container } from "theme-ui"
+import { jsx, Grid, Divider, Container, Flex, Text } from "theme-ui"
 import { graphql, navigate } from "gatsby"
-import { Flex, Text } from "theme-ui"
 import Img from "gatsby-image"
 import { MDXProvider } from "@mdx-js/react"
 import { MDXRenderer } from "gatsby-plugin-mdx"
@@ -9,6 +8,9 @@ import { MDXRenderer } from "gatsby-plugin-mdx"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { H1 } from "../components/typography/h1"
+import { useSelectTexture } from "../utils/hooks/useSelectTexture"
+
+
 
 const IndexPage = ({
   data: {
@@ -20,10 +22,12 @@ const IndexPage = ({
     navigate(`/articles/${slug}`)
   }
 
+  const [textureType] = useSelectTexture();
+
   return (
     <Layout>
       <SEO title="Gurdjieff foundation Toronto" />
-      <div sx={{ width: "100%", bg: "muted", color: "primary" }}>
+      <div sx={{ width: "100%", bg: "muted", color: "primary", variant: `texture.${textureType}` }}>
         <Container
           sx={{
             display: "flex",
@@ -77,7 +81,7 @@ const IndexPage = ({
           ))}
         </Grid>
       </Container>
-      <div sx={{ mt: [4, 4, 5], bg: "secondary", "& a": { color: "primary-darker" } }}>
+      <div sx={{ mt: [4, 4, 5], bg: "secondary", variant: `texture.${textureType}`, "& a": { color: "primary-darker" } }}>
         <Container sx={{ py: [3, 3, 3] }}>
           <MDXProvider>
             <MDXRenderer>{childStrapiHomePageLinks.childMdx.body}</MDXRenderer>

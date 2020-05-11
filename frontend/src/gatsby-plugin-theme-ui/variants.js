@@ -1,10 +1,18 @@
+import texturedPaper from '../images/textured-paper.png';
+import handMadePaper from '../images/handmade-paper.png';
+import cardboardFlat from '../images/cardboard-flat.png';
+import beigePaper from '../images/beige-paper.png';
+import mooning from '../images/mooning.png';
+import mochaGrunge from '../images/mocha-grunge.png';
+import oldHusks from '../images/old-husks.png';
+
 export const variants = {
   links: {
     nav: {
       pr: 4,
       py: 1,
       textTransform: "uppercase",
-      fontWeight: ['bold', 500],
+      fontWeight: ["bold", 500],
       letterSpacing: "0.1em",
       color: "header.secondary",
       whiteSpace: "nowrap",
@@ -33,22 +41,39 @@ export const variants = {
   },
   text: {
     caps: {
-      textTransform: 'uppercase',
-      letterSpacing: '0.2em',
+      textTransform: "uppercase",
+      letterSpacing: "0.2em",
     },
     heading: {
-      fontFamily: 'heading',
-      fontWeight: 'heading',
-      lineHeight: 'heading',
+      fontFamily: "heading",
+      fontWeight: "heading",
+      lineHeight: "heading",
     },
   },
   texture: {
     crisp: {
-      backgroundImage: 'none',
-
+      backgroundImage: "none",
+    },
+    texturedPaper: {
+      backgroundImage: `url(${texturedPaper})`,
+    },
+    cardboardFlat: {
+      backgroundImage: `url(${cardboardFlat})`, // 1
+    },
+    beigePaper: {
+      backgroundImage: `url(${beigePaper})`, // 2
+    },
+    mooning: {
+      backgroundImage: `url(${mooning})`, // 3
     },
     paper: {
-      backgroundImage: 'url(https://www.transparenttextures.com/patterns/textured-paper.png)',
+      backgroundImage: `url(${handMadePaper})`, // 1
     },
-  }
+    old: {
+      backgroundImage: `url(${mochaGrunge})`,
+    },
+    wallPaint: {
+      backgroundImage: `url(${oldHusks})`,
+    },
+  },
 }

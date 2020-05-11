@@ -6,6 +6,7 @@ import SEO from "../components/seo"
 import { MDXProvider } from "@mdx-js/react"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 import { H1, H2, H3 } from "../components"
+import { useSelectTexture } from "../utils/hooks/useSelectTexture"
 
 const ArticlesPage = ({
   data: {
@@ -15,6 +16,7 @@ const ArticlesPage = ({
   const navigateToArticle = slug => {
     navigate(`/articles/${slug}`)
   }
+  const [textureType] = useSelectTexture();
   return (
     <Layout>
       <SEO title="Gurdjieff foundation Toronto - Articles" />
@@ -30,7 +32,8 @@ const ArticlesPage = ({
               sx={{
                 display: "inline-grid",
                 bg: "muted",
-
+                variant: `texture.${textureType}`,
+                borderColor: "text",
                 px: 3,
                 pt: 3,
                 pb: 1,

@@ -4,8 +4,8 @@ import { Fragment } from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 import { Global, css } from "@emotion/core"
-
 import Header from "./header"
+import { useSelectTexture } from "../utils/hooks/useSelectTexture"
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -18,6 +18,8 @@ const Layout = ({ children }) => {
       }
     }
   `)
+
+  const [textureType] = useSelectTexture();
 
   return (
     <Fragment>
