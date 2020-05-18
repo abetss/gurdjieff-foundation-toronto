@@ -2,7 +2,7 @@ import { useState, useCallback } from "react"
 import { useColorMode } from "theme-ui"
 
 export const useSelectTexture = contentType => {
-  const defaultTexture = localStorage.getItem("theme-texture") || "paper"
+  const defaultTexture = (typeof localStorage !== 'undefined' && localStorage.getItem('theme-texture')) || 'paper';
   const [texture, _setTexture] = useState(defaultTexture)
 
   const [colorMode, setColorMode] = useColorMode()
