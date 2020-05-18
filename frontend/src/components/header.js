@@ -45,18 +45,29 @@ const Header = ({ title, subTitle }) => {
   const colorModes = [
     { name: "Light", value: "default" },
     { name: "Dark", value: "dark" },
-    { name: "Yellow", value: "light-paper" },
+    { name: "Warm", value: "warm" },
+    // { name: "Light - Darker Header", value: "lite-darker-header" },
+    // { name: "Yellow", value: "light-paper" },
   ]
 
   const [texture, setTexture, headerTexture] = useSelectTexture()
   const textureModes = [
     { name: "Crisp", value: "crisp" },
     { name: "Hand Made Paper", value: "paper" },
-    { name: "Textured Paper", value: "texturedPaper" },
+    // { name: "Textured Paper", value: "texturedPaper" },
     { name: "Beige Paper", value: "beigePaper" },
     { name: "Card Board Flat", value: "cardboardFlat" },
     { name: "Mooning", value: "mooning" },
   ]
+
+  const colorModeTextureAgnostic = !colorMode.includes("texture")
+    ? colorMode
+    : colorMode.split("-").slice(0, -1).join("-");
+
+  const handleColorChange = e => {
+    const newColorMode = texture === "crisp" ? e.target.value : `${e.target.value}-texture`
+    setColorMode(newColorMode)
+  }
 
   const gurdjieffMenus = data.gurdjieffPages.nodes
   const aboutUsMenus = data.aboutUsPages.nodes
@@ -109,10 +120,8 @@ const Header = ({ title, subTitle }) => {
             />
             <ThemeDropDown
               colorModeNames={colorModes}
-              selectedColorMode={colorMode}
-              handleChange={e => {
-                setColorMode(e.target.value)
-              }}
+              selectedColorMode={colorModeTextureAgnostic}
+              handleChange={handleColorChange}
             />
           </Flex>
         </Flex>

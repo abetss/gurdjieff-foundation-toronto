@@ -13,7 +13,7 @@ const heading = {
   marginBottom: 0
 }
 
-const currentTexture = localStorage.getItem('theme-texture') || 'paper';
+const currentTexture = (typeof localStorage !== 'undefined' && localStorage.getItem('theme-texture')) || 'paper';
 
 const getBodyBackgroundImage = texture => {
   switch(texture) {
