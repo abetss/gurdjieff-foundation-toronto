@@ -69,6 +69,22 @@ module.exports = {
             family: `Merienda`,
             variants: [`400`, `700`],
           },
+          {
+            family: `IM Fell Double Pica`,
+            variants: [`400`, `700`],
+          },
+          {
+            family: `Spectral SC`,
+            variants: [`400`, `700`],
+          },
+          {
+            family: `Libre Baskerville`,
+            variants: [`400`, `700`],
+          },
+          {
+            family: `Simonetta`,
+            variants: [`400`, `700`],
+          }
         ],
       },
     },

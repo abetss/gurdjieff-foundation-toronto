@@ -5,6 +5,7 @@ import beigePaper from '../images/beige-paper.png';
 import mooning from '../images/mooning.png';
 import mochaGrunge from '../images/mocha-grunge.png';
 import oldHusks from '../images/old-husks.png';
+import gSite from '../images/repBgLeft.gif';
 
 export const variants = {
   links: {
@@ -74,6 +75,9 @@ export const variants = {
     },
     wallPaint: {
       backgroundImage: `url(${oldHusks})`,
+    },
+    gSite: {
+      backgroundImage: `url(${gSite})`,
     },
   },
 }
