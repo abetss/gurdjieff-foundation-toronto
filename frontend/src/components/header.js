@@ -88,23 +88,24 @@ const Header = ({ title, subTitle }) => {
               textDecoration: `none`,
               display: "flex",
               alignItems: ["flex-start", "flex-end", "flex-end"],
-              flexDirection: ["column", "row", "row"],
+              flexDirection: ["column", "column", "column"],
               flexWrap: "wrap",
               letterSpacing: "0.1em",
             }}
           >
-            <Heading as="h1" sx={{ margin: 0, fontSize: 5, fontFamily: "logo" }}>
+            <Heading as="h1" sx={{ margin: 0, fontSize: 6, fontFamily: "logo" }}>
               {title}
             </Heading>
             <Heading
               as="h1"
               sx={{
                 margin: 0,
-                fontSize: 4,
+                fontSize: 5,
                 fontFamily: "logo",
                 mt: [1, 0, 0],
                 ml: [0, 1, 1],
-                "::before": { content: ['""', '" - "', '" - "'] },
+                color: "muted-darker"
+                // "::before": { content: ['""', '" - "', '" - "'] },
               }}
             >
               {subTitle}

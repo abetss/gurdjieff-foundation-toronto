@@ -26,7 +26,7 @@ const IndexPage = ({
 
   return (
     <Layout>
-      <SEO title="Gurdjieff foundation Toronto" />
+      <SEO title="Gurdjieff Foundation Toronto" />
       <div sx={{ width: "100%", bg: "muted", color: "primary", variant: `texture.${textureType}` }}>
         <Container
           sx={{
