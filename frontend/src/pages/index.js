@@ -43,7 +43,7 @@ const IndexPage = ({
             }}
             as="blockquote"
           >
-            " {quote} "
+            {quote}
           </Text>
         </Container>
       </div>
