@@ -8,8 +8,8 @@ require("dotenv").config({
 
 module.exports = {
   siteMetadata: {
-    title: `Society for Traditional Studies`,
-    subTitle: "Gurdjieff Foundation Toronto",
+    title: `Gurdjieff Foundation Toronto`,
+    subTitle: "The Society for Traditional Studies",
     description: `Gurdjieff foundation Toronto internet presence.`,
     keywords: [`gurdjieff`, `4thway`],
     author: `Gurdjieff foundation Toronto`,

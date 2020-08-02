@@ -100,12 +100,10 @@ const Header = ({ title, subTitle }) => {
               as="h1"
               sx={{
                 margin: 0,
-                fontSize: 5,
+                fontSize: 4,
                 fontFamily: "logo",
                 mt: [1, 0, 0],
-                ml: [0, 1, 1],
                 color: "muted-darker"
-                // "::before": { content: ['""', '" - "', '" - "'] },
               }}
             >
               {subTitle}
