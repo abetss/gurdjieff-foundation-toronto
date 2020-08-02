@@ -6,22 +6,30 @@ import SEO from "../components/seo"
 import { MDXProvider } from "@mdx-js/react"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 import { H1, H2 } from "../components"
+import { mdxComponents } from "../components/mdxComponents"
 
 const ArticleTemplate = ({ data: { article } }) => (
   <Layout>
     <SEO title={article.Title} />
     <Container>
       <H1>{article.Title}</H1>
-      <H2 sx={{ mt:[3,4,4] }}>
-        By {article.Author}
-      </H2>
-      <Divider sx={{ mb: [3,4,4], mt:[3,4,4], borderStyle: 'solid', borderWidth: 2, color: 'muted-darker', bg: 'muted-darker' }}/>
-      <MDXProvider>
+      <H2 sx={{ mt: [3, 4, 4] }}>By {article.Author}</H2>
+      <Divider
+        sx={{
+          mb: [3, 4, 4],
+          mt: [3, 4, 4],
+          borderStyle: "solid",
+          borderWidth: 2,
+          color: "muted-darker",
+          bg: "muted-darker",
+        }}
+      />
+      <MDXProvider components={mdxComponents}>
         <MDXRenderer>{article.childStrapiArticleContent.childMdx.body}</MDXRenderer>
       </MDXProvider>
-      <Divider sx={{ my: 4, color: 'muted'}}/>
-      <div sx={{ '& p, & h1, & h2, & h3': { color: 'text-muted' }}}>
-        <MDXProvider>
+      <Divider sx={{ my: 4, color: "muted" }} />
+      <div sx={{ "& p, & h1, & h2, & h3": { color: "text-muted" } }}>
+        <MDXProvider components={mdxComponents}>
           <MDXRenderer>{article.childStrapiArticleFooter.childMdx.body}</MDXRenderer>
         </MDXProvider>
       </div>

@@ -9,8 +9,7 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { H1 } from "../components/typography/h1"
 import { useSelectTexture } from "../utils/hooks/useSelectTexture"
-
-
+import { mdxComponents } from "../components/mdxComponents"
 
 const IndexPage = ({
   data: {
@@ -22,7 +21,7 @@ const IndexPage = ({
     navigate(`/articles/${slug}`)
   }
 
-  const [textureType] = useSelectTexture();
+  const [textureType] = useSelectTexture()
 
   return (
     <Layout>
@@ -49,13 +48,13 @@ const IndexPage = ({
       </div>
 
       <Container>
-        <div sx={{ display: "inline-block", maxWidth: 'inherit' }}>
+        <div sx={{ display: "inline-block", maxWidth: "inherit" }}>
           <Img
-            sx={{ float: "left ", mr: [4, 4, 5], mb: [3, 3, 4], width: 350, maxWidth: ['100%', 350, 350] }}
+            sx={{ float: "left ", mr: [4, 4, 5], mb: [3, 3, 4], width: 350, maxWidth: ["100%", 350, 350] }}
             fluid={contentImage.childImageSharp.fluid}
           />
           <div>
-            <MDXProvider>
+            <MDXProvider components={mdxComponents}>
               <MDXRenderer>{childStrapiHomePagecontent.childMdx.body}</MDXRenderer>
             </MDXProvider>
           </div>
@@ -81,9 +80,11 @@ const IndexPage = ({
           ))}
         </Grid>
       </Container>
-      <div sx={{ mt: [4, 4, 5], bg: "secondary", variant: `texture.${textureType}`, "& a": { color: "primary-darker" } }}>
+      <div
+        sx={{ mt: [4, 4, 5], bg: "secondary", variant: `texture.${textureType}`, "& a": { color: "primary-darker" } }}
+      >
         <Container sx={{ py: [3, 3, 3] }}>
-          <MDXProvider>
+          <MDXProvider components={mdxComponents}>
             <MDXRenderer>{childStrapiHomePageLinks.childMdx.body}</MDXRenderer>
           </MDXProvider>
         </Container>

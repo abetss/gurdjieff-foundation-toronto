@@ -6,13 +6,14 @@ import SEO from "../components/seo"
 import { MDXProvider } from "@mdx-js/react"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 import { H1 } from "../components"
+import { mdxComponents } from "../components/mdxComponents"
 
 const ArticleTemplate = ({ data: { page } }) => (
   <Layout>
     <SEO title={page.Title} />
     <Container>
       <H1>{page.Title}</H1>
-      <MDXProvider>
+      <MDXProvider components={mdxComponents}>
         <MDXRenderer>{page.childStrapiAboutGurdjieffContent.childMdx.body}</MDXRenderer>
       </MDXProvider>
     </Container>
