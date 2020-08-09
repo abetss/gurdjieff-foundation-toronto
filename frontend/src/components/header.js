@@ -62,7 +62,7 @@ const Header = ({ title, subTitle }) => {
 
   const colorModeTextureAgnostic = !colorMode.includes("texture")
     ? colorMode
-    : colorMode.split("-").slice(0, -1).join("-");
+    : colorMode.split("-").slice(0, -1).join("-")
 
   const handleColorChange = e => {
     const newColorMode = texture === "crisp" ? e.target.value : `${e.target.value}-texture`
@@ -87,7 +87,7 @@ const Header = ({ title, subTitle }) => {
               color: `header.background`,
               textDecoration: `none`,
               display: "flex",
-              alignItems: ["flex-start", "flex-end", "flex-end"],
+              alignItems: "flex-start",
               flexDirection: ["column", "column", "column"],
               flexWrap: "wrap",
               letterSpacing: "0.1em",
@@ -103,7 +103,8 @@ const Header = ({ title, subTitle }) => {
                 fontSize: 4,
                 fontFamily: "logo",
                 mt: [1, 0, 0],
-                color: "muted-darker"
+                color: "muted-darker",
+                ml: [0, 5, 5],
               }}
             >
               {subTitle}
