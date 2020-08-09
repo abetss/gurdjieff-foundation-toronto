@@ -28,6 +28,16 @@
     },
     "Links": {
       "type": "richtext"
+    },
+    "Extra_content": {
+      "type": "dynamiczone",
+      "components": [
+        "contact-info.contact",
+        "content.cenetered-content",
+        "content.default-content",
+        "content.image-left-content",
+        "content.image-right-content"
+      ]
     }
   }
 }
